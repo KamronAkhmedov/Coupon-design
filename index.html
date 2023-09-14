@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Coupon Design</title>
+        <link rel="stylesheet" href="sty.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="coupon-card">
+                <h2>Uber</h2>
+                <h3>
+                    20% flat off an all rides within the city <br />
+                    using HDFC Credit card
+                </h3>
+                <div class="couple-row">
+                    <span id="cpnCode">STEALDEAL20</span>
+                    <span id="cpnBtn">COPY CODE</span>
+                </div>
+                <p>Valid Till: 15 Dec, 2023</p>
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+            </div>
+        </div>
+
+        <script>
+            var cpnBtn = document.getElementById("cpnBtn");
+            var cpnCode = document.getElementById("cpnCode");
+            cpnBtn.onclick = function () {
+                navigator.clipboard.writeText(cpnCode.innerHTML);
+                cpnBtn.innerHTML = "COPIED";
+                setTimeout(function () {
+                    cpnBtn.innerHTML = "COPY CODE";
+                }, 1000);
+            };
+        </script>
+    </body>
+</html>
